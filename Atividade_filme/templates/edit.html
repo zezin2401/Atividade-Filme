@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Filme</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #f00;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 800px;
+        }
+        h1 {
+            color: #f00;
+        }
+        label, input, select, button {
+            margin-bottom: 10px;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        input, select {
+            padding: 10px;
+            border: 1px solid #f00;
+            border-radius: 5px;
+            background-color: #000;
+            color: #f00;
+        }
+        button {
+            background-color: #f00;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #c00;
+        }
+        a {
+            color: #f00;
+            text-decoration: none;
+            display: block;
+            margin-top: 10px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Editar Filme</h1>
+        <form action="" method="post">
+            <label for="filme">Nome do Filme:</label>
+            <input type="text" id="filme" name="filme" value="{{ filme.nome }}" required>
+
+            <label for="genero">Gênero:</label>
+            <select id="genero" name="genero" required>
+                <option value="Ação" {% if filme.genero == 'Ação' %}selected{% endif %}>Ação</option>
+                <option value="Comédia" {% if filme.genero == 'Comédia' %}selected{% endif %}>Comédia</option>
+                <option value="Drama" {% if filme.genero == 'Drama' %}selected{% endif %}>Drama</option>
+                <option value="Terror" {% if filme.genero == 'Terror' %}selected{% endif %}>Terror</option>
+                <option value="Romance" {% if filme.genero == 'Romance' %}selected{% endif %}>Romance</option>
+                <option value="Ficção Científica" {% if filme.genero == 'Ficção Científica' %}selected{% endif %}>Ficção Científica</option>
+            </select>
+
+            <button type="submit">Salvar Alterações</button>
+        </form>
+        <a href="{{ url_for('list_filmes') }}" class="button">Voltar para Lista de Filmes</a>
+    </div>
+</body>
+</html>

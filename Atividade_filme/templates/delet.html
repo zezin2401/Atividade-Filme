@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Exclusão</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Confirmar Exclusão</h1>
+    <p>Você tem certeza de que deseja excluir o filme "{{ filme }}"?</p>
+    <form action="" method="post">
+        <button type="submit">Excluir</button>
+        <a href="{{ url_for('list_filmes') }}">Cancelar</a>
+    </form>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Exclusão</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #f00;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 800px;
+        }
+        h1 {
+            color: #f00;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #f00;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #c00;
+        }
+        a {
+            color: #f00;
+            text-decoration: none;
+            display: block;
+            margin-top: 10px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Confirmar Exclusão</h1>
+        <p>Você tem certeza que deseja excluir o filme <strong>{{ filme.nome }}</strong> - {{ filme.genero }}?</p>
+        <form action="" method="post">
+            <button type="submit">Excluir</button>
+        </form>
+        <a href="{{ url_for('list_filmes') }}" class="button">Cancelar</a>
+    </div>
+</body>
+</html>

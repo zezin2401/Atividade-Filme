@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Filme</title>
+    <style>
+        /* Estilos para o corpo da página */
+        body {
+            background-color: #000; /* Cor de fundo preta */
+            color: #f00; /* Cor do texto vermelha */
+            font-family: Arial, sans-serif; /* Fonte usada na página */
+            display: flex; /* Usa Flexbox para layout */
+            justify-content: center; /* Alinha horizontalmente ao centro */
+            align-items: center; /* Alinha verticalmente ao centro */
+            height: 100vh; /* Altura da tela inteira */
+            margin: 0; /* Remove margem padrão */
+        }
+        /* Estilos para o container principal */
+        .container {
+            text-align: center; /* Centraliza o texto dentro do container */
+            background-color: #222; /* Cor de fundo do container */
+            padding: 20px; /* Espaçamento interno */
+            border-radius: 10px; /* Bordas arredondadas */
+        }
+        /* Estilos para o título */
+        h1 {
+            color: #f00; /* Cor do texto vermelha */
+        }
+        /* Estilos para labels, inputs, selects e buttons */
+        label, input, select, button {
+            margin-bottom: 10px; /* Espaçamento abaixo de cada elemento */
+            display: block; /* Cada elemento ocupa a largura total disponível */
+            width: 100%; /* Largura total do container */
+            box-sizing: border-box; /* Inclui padding e bordas na largura total */
+        }
+        /* Estilos para inputs e selects */
+        input, select {
+            padding: 10px; /* Espaçamento interno */
+            border: 1px solid #f00; /* Borda vermelha */
+            border-radius: 5px; /* Bordas arredondadas */
+            background-color: #000; /* Fundo preto */
+            color: #f00; /* Cor do texto vermelha */
+        }
+        /* Estilos para buttons */
+        button {
+            background-color: #f00; /* Cor de fundo vermelha */
+            color: #fff; /* Cor do texto branca */
+            border: none; /* Remove a borda padrão */
+            padding: 10px; /* Espaçamento interno */
+            cursor: pointer; /* Cursor de ponteiro ao passar sobre o botão */
+            border-radius: 5px; /* Bordas arredondadas */
+        }
+        /* Estilos para o hover dos buttons */
+        button:hover {
+            background-color: #c00; /* Cor de fundo vermelha mais escura ao passar o mouse */
+        }
+        /* Estilos para links */
+        a {
+            color: #f00; /* Cor do texto vermelha */
+            text-decoration: none; /* Remove sublinhado dos links */
+            display: block; /* Faz o link ocupar a largura total disponível */
+            margin-top: 10px; /* Espaçamento acima dos links */
+        }
+        /* Estilos para o hover dos links */
+        a:hover {
+            text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Adicionar Filme</h1>
+        <!-- Formulário para adicionar um filme -->
+        <form action="/" method="post">
+            <label for="filme">Nome do Filme:</label>
+            <input type="text" id="filme" name="filme" required>
+
+            <label for="genero">Gênero:</label>
+            <select id="genero" name="genero" required>
+                <option value="">Selecione um gênero</option>
+                <option value="Ação">Ação</option>
+                <option value="Comédia">Comédia</option>
+                <option value="Drama">Drama</option>
+                <option value="Terror">Terror</option>
+                <option value="Romance">Romance</option>
+                <option value="Ficção Científica">Ficção Científica</option>
+            </select>
+
+            <button type="submit">Adicionar</button>
+        </form>
+        <a href="{{ url_for('list_filmes') }}">Ver Lista de Filmes</a>
+    </div>
+</body>
+</html>

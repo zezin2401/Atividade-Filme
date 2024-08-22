@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Filmes</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #f00;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 800px;
+        }
+        h1 {
+            color: #f00;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .button {
+            background-color: #fff;
+            color: #000;
+            border: 1px solid #f00;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .button:hover {
+            background-color: #eee;
+        }
+        a {
+            color: #f00;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #c00;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Filmes</h1>
+        <ul>
+            {% for filme in filmes %}
+                <li>
+                    <strong>{{ filme.nome }}</strong> - {{ filme.genero }}
+                    <a href="{{ url_for('edit', index=loop.index0) }}" class="button">Editar</a>
+                    <a href="{{ url_for('delete', index=loop.index0) }}" class="button">Excluir</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('index') }}" class="button">Adicionar Novo Filme</a>
+    </div>
+</body>
+</html>
